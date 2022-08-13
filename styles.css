@@ -1,0 +1,16 @@
+.divs {
+background-color: rgb(56, 39, 36);
+width: 5.8vw;
+height: 6vh;
+border: 0.05rem solid wheat;
+border-radius: 5%;
+display: inline-block;
+color: blueviolet;
+margin: 0;
+}
+
+.mains {
+    max-width: 100vw;
+    max-height: 100vh;
+    margin: 0;
+}
