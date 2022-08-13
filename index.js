@@ -33,7 +33,13 @@ for (let i=0;i<side;i++){
 function hovers(hoverNode){
     colors = ['red','orange','yellow','green','blue','indigo','violet']
     let random = Math.floor(Math.random()*colors.length)
+    let colorMap = '123456789ABCDEF'
+    let color = '#';
+    for(let i=0;i<6;i++){
+        color+=colorMap[(Math.floor(Math.random()*colorMap.length))]
+    }
     hoverNode.addEventListener('mouseover', ()=>{
-        hoverNode.style.backgroundColor=colors[random]
+        hoverNode.style.backgroundColor=color
+
     })
 }
