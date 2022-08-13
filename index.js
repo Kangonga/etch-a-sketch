@@ -1,22 +1,34 @@
 let body = document.getElementById('body')
 let mainContainer = document.createElement('div')
-mainContainer.setAttribute('class','mains')
-text = "hello"
-// mainContainer.textContent=text
 body.appendChild(mainContainer)
+mainContainer.setAttribute('class','mains')
+
+
+let reset = document.getElementById('reset')
+reset.addEventListener('click',()=>mainContainer.textContent="")
+
+let play = document.getElementById('play')
+play.addEventListener('click',()=>{
+    mainContainer.textContent = " "
+    let sides=prompt("how many sides do you want the grid to have? \nmaximum of 100")
+    createGrid(sides)
+})
+
 
 
 //create rows and columns
-for (let i=0;i<16;i++){
-    for(let j=0;j<16;j++){
+function createGrid(side){
+for (let i=0;i<side;i++){
+    for(let j=0;j<side;j++){
         let column = document.createElement('div')
         mainContainer.append(column)
+        column.style.width = (Math.floor(100/side))+'%'
         column.setAttribute('class','divs')
         hovers(column)
         
     }
 }
-
+}
 //function that hovers
 function hovers(hoverNode){
     colors = ['red','orange','yellow','green','blue','indigo','violet']
